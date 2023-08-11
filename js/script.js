@@ -1,12 +1,13 @@
+{
 function playGame(arg){
     clearMessages();
-    let playerInput = arg; //prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
+    const playerInput = arg; //prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
 
-    let randomNumber = Math.floor(Math.random() * 3 + 1);
+    const randomNumber = Math.floor(Math.random() * 3 + 1);
 
     console.log(randomNumber);
 
-    function getMoveName(moveNumber) {
+    const getMoveName = function(moveNumber) {
         if (moveNumber == 1) {
             return 'kamień';
         } else if (moveNumber == 2) {
@@ -18,16 +19,16 @@ function playGame(arg){
 
     console.log(getMoveName(randomNumber));
 
-    let computerMove = getMoveName(randomNumber);
+    const computerMove = getMoveName(randomNumber);
 
 
-    let playerMove = getMoveName(playerInput);
+    const playerMove = getMoveName(playerInput);
 
-    function printMoves(computerMove, playerMove) {
+    const printMoves = function(computerMove, playerMove) {
        return  `Twój ruch to: ${playerMove}, Ruch komputera to: ${computerMove}`;
     }
     
-    function displayResult(playerMove, computerMove) {
+    const displayResult = function(playerMove, computerMove) {
         if ((playerMove == undefined) || (playerMove > 3)) {
             printMessage(`Masz raptem trzy cyfry do wyboru 1,2 lub 3 a ty wpisujesz co... ${playerInput}?! Popraw się!`);
         } else if ((computerMove == 'kamień' && playerMove == 'papier') || (computerMove == 'papier' && playerMove == 'nożyce') || (computerMove == 'nożyce' && playerMove == 'kamień')) {
@@ -54,6 +55,7 @@ document.getElementById('play-paper').addEventListener('click', function() {
 document.getElementById('play-scissors').addEventListener('click', function() {
     playGame(3);
 });
+}
 
 
 
