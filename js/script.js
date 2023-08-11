@@ -27,17 +27,11 @@ function playGame(arg){
         if ((playerMove == undefined) || (playerMove > 3)) {
             printMessage(`Masz raptem trzy cyfry do wyboru 1,2 lub 3 a ty wpisujesz co... ${playerInput}?! Popraw się!`);
         } else if ((computerMove == 'kamień' && playerMove == 'papier') || (computerMove == 'papier' && playerMove == 'nożyce') || (computerMove == 'nożyce' && playerMove == 'kamień')) {
-            printMessage('Twój ruch to: ' + playerMove);
-            printMessage('Ruch komputera to ' + computerMove);
-            printMessage('Ty wygrywasz!');
+            printMessage(`Twój ruch to: ${playerMove}, Ruch komputera to: ${computerMove} czyli... Ty wygrywasz!!!`);
         } else if (computerMove === playerMove) {
-            printMessage('Twój ruch to: ' + playerMove);
-            printMessage('Ruch komputera to ' + computerMove);
-            printMessage('Remis!')
+            printMessage(`Twój ruch to: ${playerMove}, Ruch komputera to: ${computerMove} Remis!`) 
         } else {
-            printMessage('Twój ruch to: ' + playerMove);
-            printMessage('Ruch komputera to ' + computerMove);
-            printMessage('Ty nie wygrywasz, bo wygrywa komputer!')
+            printMessage(`Twój ruch to: ${playerMove}, Ruch komputera to: ${computerMove} Ty nie wygrywasz, bo wygrywa komputer!`) 
         }
     }
 
